@@ -6,6 +6,7 @@ import Helmet from 'react-helmet'
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import { rhythm } from '../utils/typography'
+import Hero from '../components/Hero'
 
 class BlogIndex extends React.Component {
   render() {
@@ -24,6 +25,7 @@ class BlogIndex extends React.Component {
           title={siteTitle}
         />
         <Bio />
+        <Hero />
         {posts.map(({ node }) => {
           const title = get(node, 'frontmatter.title') || node.fields.slug
           return (
