@@ -4,11 +4,11 @@ auto_deploy: false
 admin_path: 
 webhook_url: 
 sections:
+- type: heading
+  label: Posts
 - type: document
   path: info/business
   label: Business Info
-  match: "**/*"
-  read_only: false
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
