@@ -1,9 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Starter Blog',
-    author: 'Kyle Mathews',
-    description: 'A starter blog demonstrating what Gatsby can do.',
-    siteUrl: 'https://gatsbyjs.github.io/gatsby-starter-blog/',
+    title: 'Weekly | Budget on a week',
+    author: 'Dan Seethaler',
+    description:
+      "Weekly is an app that helps you stick to a budget by making it simple to understand what you have to spend.  Discover your weekly allowance then track your daily spending to stay within your allowance amount. Get out of debt, save for a goal, but most importantly stop wondering what's happening with your money.",
+    siteUrl: 'https://weeklybudgeting.com/',
   },
   pathPrefix: '/gatsby-starter-blog',
   plugins: [
@@ -57,13 +58,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Weekly Budgeting`,
+        short_name: `Weekly`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/assets/gatsby-icon.png`,
+        icon: `src/assets/weekly_icon.png`,
       },
     },
     `gatsby-plugin-offline`,
@@ -75,4 +76,4 @@ module.exports = {
       },
     },
   ],
-}
+};
