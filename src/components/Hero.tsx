@@ -1,16 +1,6 @@
-import React from 'react'
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
+import React from 'react'
 import FlexContainer from './FlexContainer'
-
-const Container = styled.div({
-  margin: '3rem auto',
-  maxWidth: 100,
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  justifyContent: 'center',
-})
 
 const UserWrapper = styled.div`
   display: flex;
@@ -47,10 +37,6 @@ const Username = styled.h2`
 const Excerpt = styled.p`
   margin: 0;
 `
-// Using css prop provides a concise and flexible API to style the components. //
-const underline = css`
-  text-decoration: underline;
-`
 
 const User = props => (
   <UserWrapper>
@@ -64,7 +50,6 @@ const User = props => (
 
 const Hero = () => (
   <FlexContainer>
-    <h1 css={underline}>About Emotion</h1>
     <p>Emotion is uber cool</p>
     <User
       username="Jane Doe"
