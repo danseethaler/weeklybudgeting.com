@@ -1,6 +1,6 @@
-import styled from '@emotion/styled'
-import React from 'react'
-import FlexContainer from './FlexContainer'
+import styled, {useStyledTheme} from '../config/styled';
+import React from 'react';
+import FlexContainer from './FlexContainer';
 
 const UserWrapper = styled.div`
   display: flex;
@@ -12,7 +12,7 @@ const UserWrapper = styled.div`
   &:last-child {
     margin-bottom: 0;
   }
-`
+`;
 
 const Avatar = styled.img`
   flex-grow: 0;
@@ -21,22 +21,23 @@ const Avatar = styled.img`
   width: 96px;
   height: 96px;
   margin: 0;
-`
+`;
 
-const Description = styled.div`
-  flex: 1;
-  margin-left: 18px;
-  padding: 12px;
-`
+const Description = styled.div(({theme}) => ({
+  flex: '1',
+  color: theme.colors.orange300,
+  marginLeft: 18,
+  padding: 12,
+}));
 
 const Username = styled.h2`
   margin: 0 0 12px 0;
   padding: 0;
-`
+`;
 
 const Excerpt = styled.p`
   margin: 0;
-`
+`;
 
 const User = props => (
   <UserWrapper>
@@ -46,22 +47,26 @@ const User = props => (
       <Excerpt>{props.excerpt}</Excerpt>
     </Description>
   </UserWrapper>
-)
+);
 
-const Hero = () => (
-  <FlexContainer>
-    <p>Emotion is uber cool</p>
-    <User
-      username="Jane Doe"
-      avatar="https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg"
-      excerpt="I'm Jane Doe. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-    />
-    <User
-      username="Bob Smith"
-      avatar="https://s3.amazonaws.com/uifaces/faces/twitter/vladarbatov/128.jpg"
-      excerpt="I'm Bob smith, a vertically aligned type of guy. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-    />
-  </FlexContainer>
-)
+const Hero = () => {
+  const theme = useStyledTheme();
 
-export default Hero
+  return (
+    <FlexContainer>
+      <p>Emotion is uber {theme.colors.primary100}</p>
+      <User
+        username="Jane Doe"
+        avatar="https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg"
+        excerpt="I'm Jane Doe. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+      />
+      <User
+        username="Bob Smith"
+        avatar="https://s3.amazonaws.com/uifaces/faces/twitter/vladarbatov/128.jpg"
+        excerpt="I'm Bob smith, a vertically aligned type of guy. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+      />
+    </FlexContainer>
+  );
+};
+
+export default Hero;
