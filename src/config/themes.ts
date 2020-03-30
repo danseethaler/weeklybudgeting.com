@@ -13,13 +13,15 @@ export const lightTextColors = {
 
   success500: '#24CC97',
   warning500: '#FF4578',
-}
+};
 
-type TextColorTheme = { [key in keyof typeof lightTextColors]: string }
-export type TextColorKeys = keyof TextColorTheme
+type TextColorTheme = {[key in keyof typeof lightTextColors]: string};
+export type TextColorKeys = keyof TextColorTheme;
 
 const lightThemeColors = {
   ...lightTextColors,
+
+  subheader: '#5C5C5C',
 
   blue100: '#F2F8FC',
   blue200: '#BDD4E5',
@@ -55,7 +57,7 @@ const lightThemeColors = {
   background500: '#AAB3C1',
   background600: '#5B636D',
   background700: '#3D4144',
-}
+};
 
 export const darkTextColors = {
   white: '#FFFFFF',
@@ -72,7 +74,7 @@ export const darkTextColors = {
 
   success500: '#24CC97',
   warning500: '#FF4578',
-}
+};
 
 const darkThemeColors: ColorTheme = {
   ...darkTextColors,
@@ -114,52 +116,52 @@ const darkThemeColors: ColorTheme = {
   background500: '#9F9EAE',
   background600: '#C9C8D5',
   background700: '#EAEAF1',
-}
+};
 
-export const fontFamily = 'System'
+export const fontFamily = 'System';
 // 'Avenir Next'
 
 const fontWeight: FontWeightType = {
-  light: '400',
-  medium: '500',
-  semibold: '600',
-  bold: '700',
-  heavy: '800',
-}
+  light: 400,
+  medium: 500,
+  semibold: 600,
+  bold: 700,
+  heavy: 800,
+};
 
 const baseTheme = {
   baseUnit: 8,
   fontUnit: 4,
   fontWeight,
   fontFamily,
-}
+};
 
-type ColorTheme = { [key in keyof typeof lightThemeColors]: string }
-export type ColorKeys = keyof ColorTheme
+type ColorTheme = {[key in keyof typeof lightThemeColors]: string};
+export type ColorKeys = keyof ColorTheme;
 
 export interface FontWeightType {
-  light: '400'
-  medium: '500'
-  semibold: '600'
-  bold: '700'
-  heavy: '800'
+  light: 400;
+  medium: 500;
+  semibold: 600;
+  bold: 700;
+  heavy: 800;
 }
 
-export type FontWeightValues = '400' | '500' | '600' | '700' | '800'
-export type FontWeightKeys = keyof FontWeightType
+export type FontWeightValues = '400' | '500' | '600' | '700' | '800';
+export type FontWeightKeys = keyof FontWeightType;
 
 export interface Theme {
-  baseUnit: number
-  fontUnit: number
-  fontFamily: string
+  baseUnit: number;
+  fontUnit: number;
+  fontFamily: string;
 
-  fontWeight: FontWeightType
-  colors: ColorTheme
+  fontWeight: FontWeightType;
+  colors: ColorTheme;
 }
 
 export interface Themes {
-  light: Theme
-  dark: Theme
+  light: Theme;
+  dark: Theme;
 }
 
 const themes: Themes = {
@@ -171,6 +173,6 @@ const themes: Themes = {
     ...baseTheme,
     colors: lightThemeColors,
   },
-}
+};
 
-export default themes
+export default themes;

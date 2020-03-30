@@ -1,5 +1,6 @@
-import styled, {useStyledTheme} from '../config/styled';
 import React from 'react';
+import logo from '../assets/logo_name.png';
+import styled, {useStyledTheme} from '../config/styled';
 import FlexContainer from './FlexContainer';
 
 const UserWrapper = styled.div`
@@ -14,14 +15,14 @@ const UserWrapper = styled.div`
   }
 `;
 
-const Avatar = styled.img`
-  flex-grow: 0;
-  flex-shrink: 0;
-  flex-basis: 96px;
-  width: 96px;
-  height: 96px;
-  margin: 0;
-`;
+const Avatar = styled.img({
+  flexGrow: 0,
+  flexShrink: 0,
+  flexBasis: 96,
+  width: 96,
+  height: 96,
+  margin: 0,
+});
 
 const Description = styled.div(({theme}) => ({
   flex: '1',
@@ -57,7 +58,7 @@ const Hero = () => {
       <p>Emotion is uber {theme.colors.primary100}</p>
       <User
         username="Jane Doe"
-        avatar="https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg"
+        avatar={logo}
         excerpt="I'm Jane Doe. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
       />
       <User
