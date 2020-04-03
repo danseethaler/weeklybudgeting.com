@@ -22,6 +22,8 @@ const lightThemeColors = {
   ...lightTextColors,
 
   subheader: '#5C5C5C',
+  body: '#777777',
+  starYellow: '#FFC800',
 
   blue100: '#F2F8FC',
   blue200: '#BDD4E5',
@@ -79,6 +81,10 @@ export const darkTextColors = {
 const darkThemeColors: ColorTheme = {
   ...darkTextColors,
 
+  subheader: '#5C5C5C',
+  body: '#777777',
+  starYellow: '#FFC800',
+
   blue100: '#18374E',
   blue200: '#2C516D',
   blue300: '#274F6D',
@@ -118,8 +124,10 @@ const darkThemeColors: ColorTheme = {
   background700: '#EAEAF1',
 };
 
-export const fontFamily = 'System';
-// 'Avenir Next'
+export const fontFamily = {
+  default: '"Avenir Next", serif',
+  header: '"Montserrat", serif',
+};
 
 const fontWeight: FontWeightType = {
   light: 400,
@@ -130,6 +138,7 @@ const fontWeight: FontWeightType = {
 };
 
 const baseTheme = {
+  containerWidth: 920,
   baseUnit: 8,
   fontUnit: 4,
   fontWeight,
@@ -151,9 +160,13 @@ export type FontWeightValues = '400' | '500' | '600' | '700' | '800';
 export type FontWeightKeys = keyof FontWeightType;
 
 export interface Theme {
+  containerWidth: number;
   baseUnit: number;
   fontUnit: number;
-  fontFamily: string;
+  fontFamily: {
+    default: string;
+    header: string;
+  };
 
   fontWeight: FontWeightType;
   colors: ColorTheme;

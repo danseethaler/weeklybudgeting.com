@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'Weekly | Budget on a week',
-    author: 'Dan Seethaler',
+    author: 'Weekly, LLC',
     description:
       "Weekly is an app that helps you stick to a budget by making it simple to understand what you have to spend.  Discover your weekly allowance then track your daily spending to stay within your allowance amount. Get out of debt, save for a goal, but most importantly stop wondering what's happening with your money.",
     siteUrl: 'https://weeklybudgeting.com/',
@@ -51,7 +51,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: `UA-139975716-1`,
       },
     },
     `gatsby-plugin-feed`,
@@ -67,13 +67,17 @@ module.exports = {
         icon: `src/assets/weekly_icon.png`,
       },
     },
-    `gatsby-plugin-offline`,
-    `gatsby-plugin-react-helmet`,
     {
-      resolve: 'gatsby-plugin-typography',
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
-        pathToConfigModule: 'src/utils/typography',
+        fonts: [
+          `montserrat\:300,400,500,600,700`,
+          // `source sans pro\:300,400,400i,500,600,700`,
+        ],
+        display: 'swap',
       },
     },
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-react-helmet`,
   ],
 };

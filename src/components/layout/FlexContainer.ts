@@ -1,4 +1,5 @@
-import styled from '@emotion/styled';
+import styled from '../../config/styled';
+import {sharedSpacingStyles, SpacingComponentProps} from './spacing';
 
 interface FlexComponentProps {
   flex?: number;
@@ -13,8 +14,11 @@ interface FlexComponentProps {
     | 'space-evenly';
 }
 
-const FlexContainer = styled.div<FlexComponentProps>(
+export type FlexContainerProps = FlexComponentProps & SpacingComponentProps;
+
+const FlexContainer = styled.div<FlexContainerProps>(
   ({flex = null, row = false, align = 'stretch', justify = 'flex-start'}) => [
+    sharedSpacingStyles,
     {
       display: 'flex',
       flex,

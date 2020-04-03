@@ -1,13 +1,9 @@
-import React from 'react';
-import {Link, graphql} from 'gatsby';
+import {graphql} from 'gatsby';
 import get from 'lodash/get';
+import React from 'react';
 import Helmet from 'react-helmet';
-
-import Bio from '../components/Bio';
-import Layout from '../components/Layout';
-import {rhythm} from '../utils/typography';
-import Hero from '../components/Hero';
-import SlidingText from '../components/SlidingText';
+import LandingHeader from '../components/LandingHeader';
+import Layout from '../components/layout/Layout';
 
 interface Props {
   location: Location;
@@ -25,33 +21,14 @@ const LandingPage: React.FC<Props> = ({data, location}) => {
         meta={[{name: 'description', content: siteDescription}]}
         title={siteTitle}
       />
-      <SlidingText text="monthly" />
-      <Hero />
+      <LandingHeader />
+      {/*
       {posts.map(({node}) => {
         const title = get(node, 'frontmatter.title') || node.fields.slug;
         return (
           <div key={node.fields.slug}>
             <h3
               style={{
-                marginBottom: rhythm(1 / 4),
-              }}>
-              <Link style={{boxShadow: 'none'}} to={node.fields.slug}>
-                {title}
-              </Link>
-            </h3>
-            <small>{node.frontmatter.date}</small>
-            <p dangerouslySetInnerHTML={{__html: node.excerpt}} />
-          </div>
-        );
-      })}
-      <Bio />
-      {posts.map(({node}) => {
-        const title = get(node, 'frontmatter.title') || node.fields.slug;
-        return (
-          <div key={node.fields.slug}>
-            <h3
-              style={{
-                marginBottom: rhythm(1 / 4),
               }}>
               <Link style={{boxShadow: 'none'}} to={node.fields.slug}>
                 {title}
@@ -68,7 +45,6 @@ const LandingPage: React.FC<Props> = ({data, location}) => {
           <div key={node.fields.slug}>
             <h3
               style={{
-                marginBottom: rhythm(1 / 4),
               }}>
               <Link style={{boxShadow: 'none'}} to={node.fields.slug}>
                 {title}
@@ -79,6 +55,22 @@ const LandingPage: React.FC<Props> = ({data, location}) => {
           </div>
         );
       })}
+      {posts.map(({node}) => {
+        const title = get(node, 'frontmatter.title') || node.fields.slug;
+        return (
+          <div key={node.fields.slug}>
+            <h3
+              style={{
+              }}>
+              <Link style={{boxShadow: 'none'}} to={node.fields.slug}>
+                {title}
+              </Link>
+            </h3>
+            <small>{node.frontmatter.date}</small>
+            <p dangerouslySetInnerHTML={{__html: node.excerpt}} />
+          </div>
+        );
+      })} */}
     </Layout>
   );
 };

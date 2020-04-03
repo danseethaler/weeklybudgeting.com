@@ -1,23 +1,42 @@
 import styled from '../config/styled';
+import {
+  sharedTypographyStyles,
+  TypographyComponentProps,
+} from '../config/typography';
 
 export const Headline = styled.h1(({theme}) => ({
   margin: 0,
-  fontFamily: '"Montserrat", serif',
-  fontSize: '49px',
+  fontFamily: theme.fontFamily.header,
+  fontSize: theme.fontUnit * 9,
   color: theme.colors.success500,
-  letterSpacing: '0px',
-  lineHeight: '1.2',
+  lineHeight: 1.4,
   fontWeight: theme.fontWeight.bold,
-  fontStyle: 'normal',
-  textAlign: 'center',
 }));
 
-export const SubHeader = styled.h3(({theme}) => ({
-  marginBottom: 8,
-  paddingRight: 8,
-  fontFamily: '"Montserrat", serif',
-  fontSize: 37,
-  fontWeight: theme.fontWeight.bold,
-  fontStyle: 'normal',
-  color: theme.colors.subheader,
+export const SubHeader = styled.h3<TypographyComponentProps>(({theme}) => [
+  sharedTypographyStyles,
+  {
+    fontFamily: theme.fontFamily.header,
+    fontSize: theme.fontUnit * 7.5,
+    fontWeight: theme.fontWeight.bold,
+    fontStyle: 'normal',
+    lineHeight: 1.6,
+    color: theme.colors.subheader,
+  },
+]);
+
+export const BodyText = styled.p<TypographyComponentProps>(({theme}) => [
+  sharedTypographyStyles,
+  {
+    fontWeight: theme.fontWeight.medium,
+    lineHeight: 1.6,
+    color: theme.colors.body,
+    fontSize: theme.fontUnit * 4.5,
+  },
+]);
+
+export const StarsText = styled.span(({theme}) => ({
+  color: theme.colors.starYellow,
+  fontSize: theme.fontUnit * 7,
+  padding: theme.baseUnit / 2,
 }));
