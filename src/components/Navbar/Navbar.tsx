@@ -1,5 +1,6 @@
 import React from 'react';
 import {useStyledTheme} from '../../config/styled';
+import Button from '../Button';
 import FlexContainer from '../layout/FlexContainer';
 import SliceContainer from '../layout/SliceContainer';
 import {Logo, MobileNavButton, NavContainer, NavLink} from './Navbar.styles';
@@ -29,6 +30,7 @@ const Navbar: React.FC = () => {
             <NavLink to="/support">Support</NavLink>
           </NavContainer>
         )}
+        {!theme.smallDevice && <Button text="Get the App" />}
       </FlexContainer>
     </SliceContainer>
   );

@@ -1,3 +1,34 @@
+export const getThemeSizes = (): {
+  smallDevice: boolean;
+  deviceSize: 'phone' | 'tablet' | 'laptop' | 'desktop';
+} => {
+  var width =
+    typeof window !== 'undefined' &&
+    window.document.documentElement.clientWidth;
+
+  let deviceSize: 'phone' | 'tablet' | 'laptop' | 'desktop' = 'desktop';
+  let smallDevice = false;
+
+  if (width < 576) {
+    deviceSize = 'phone';
+    smallDevice = true;
+  } else if (width < 768) {
+    deviceSize = 'tablet';
+    smallDevice = true;
+  } else if (width < 992) {
+    deviceSize = 'laptop';
+    smallDevice = true;
+  } else {
+    deviceSize = 'desktop';
+    smallDevice = false;
+  }
+
+  return {
+    smallDevice,
+    deviceSize,
+  };
+};
+
 export const lightTextColors = {
   white: '#FFFFFF',
   text20: '#FFFFFF',
@@ -179,17 +210,17 @@ export interface Themes {
   dark: Theme;
 }
 
+const themeSizes = getThemeSizes();
+
 const themes: Themes = {
   dark: {
     ...baseTheme,
-    smallDevice: false,
-    deviceSize: 'desktop',
+    ...themeSizes,
     colors: darkThemeColors,
   },
   light: {
     ...baseTheme,
-    smallDevice: false,
-    deviceSize: 'desktop',
+    ...themeSizes,
     colors: lightThemeColors,
   },
 };
