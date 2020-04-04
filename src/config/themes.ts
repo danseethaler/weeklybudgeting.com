@@ -138,7 +138,7 @@ const fontWeight: FontWeightType = {
 };
 
 const baseTheme = {
-  containerWidth: 920,
+  containerWidth: 1020,
   baseUnit: 8,
   fontUnit: 4,
   fontWeight,
