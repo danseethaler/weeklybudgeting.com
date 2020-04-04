@@ -29,6 +29,7 @@ const LandingHeader: React.FC = () => {
           <AppReview />
           {theme.smallDevice && (
             <a
+              style={{padding: theme.baseUnit * 3}}
               target="_blank"
               href="https://apps.apple.com/us/app/weekly-budgeting-redefined/id1460038809"
               // onClick="return trackAppStoreClick();"

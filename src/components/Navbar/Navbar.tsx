@@ -18,9 +18,7 @@ const Navbar: React.FC = () => {
         customStyles={{height: theme.smallDevice ? null : 80}}>
         <Logo />
         {theme.smallDevice ? (
-          <NavContainer>
-            <MobileNavButton />
-          </NavContainer>
+          <MobileNavButton />
         ) : (
           <NavContainer>
             <NavLink to="/faqs">FAQs</NavLink>

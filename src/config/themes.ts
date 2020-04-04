@@ -174,6 +174,7 @@ const baseTheme = {
   fontUnit: 4,
   fontWeight,
   fontFamily,
+  transition: `all 300ms ease`,
 };
 
 type ColorTheme = {[key in keyof typeof lightThemeColors]: string};
@@ -193,6 +194,7 @@ export type FontWeightKeys = keyof FontWeightType;
 export interface Theme {
   smallDevice: boolean;
   deviceSize: 'phone' | 'tablet' | 'laptop' | 'desktop';
+  transition: string;
   containerWidth: number;
   baseUnit: number;
   fontUnit: number;
