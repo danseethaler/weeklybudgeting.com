@@ -9,7 +9,7 @@ export const Headline = styled.h1<TypographyComponentProps>(({theme}) => [
   {
     margin: 0,
     fontFamily: theme.fontFamily.header,
-    fontSize: theme.fontUnit * 11.5,
+    fontSize: theme.fontUnit * (theme.smallDevice ? 9.5 : 11.5),
     color: theme.colors.success500,
     lineHeight: 1.4,
     fontWeight: theme.fontWeight.bold,
@@ -20,7 +20,7 @@ export const SubHeader = styled.h3<TypographyComponentProps>(({theme}) => [
   sharedTypographyStyles,
   {
     fontFamily: theme.fontFamily.header,
-    fontSize: theme.fontUnit * 9.5,
+    fontSize: theme.fontUnit * (theme.smallDevice ? 7.5 : 9.5),
     fontWeight: theme.fontWeight.bold,
     fontStyle: 'normal',
     lineHeight: 1.6,

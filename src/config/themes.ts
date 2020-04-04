@@ -160,6 +160,8 @@ export type FontWeightValues = '400' | '500' | '600' | '700' | '800';
 export type FontWeightKeys = keyof FontWeightType;
 
 export interface Theme {
+  smallDevice: boolean;
+  deviceSize: 'phone' | 'tablet' | 'laptop' | 'desktop';
   containerWidth: number;
   baseUnit: number;
   fontUnit: number;
@@ -180,10 +182,14 @@ export interface Themes {
 const themes: Themes = {
   dark: {
     ...baseTheme,
+    smallDevice: false,
+    deviceSize: 'desktop',
     colors: darkThemeColors,
   },
   light: {
     ...baseTheme,
+    smallDevice: false,
+    deviceSize: 'desktop',
     colors: lightThemeColors,
   },
 };
