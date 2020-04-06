@@ -4,6 +4,8 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import LandingHeader from '../components/LandingHeader';
 import Layout from '../components/layout/Layout';
+import Podcast from './landing/slices/Podcast';
+console.log('Podcast', Podcast);
 
 interface Props {
   location: Location;
@@ -15,13 +17,14 @@ const LandingPage: React.FC<Props> = ({data, location}) => {
   const posts = get(data, 'allMarkdownRemark.edges');
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location}>
       <Helmet
         htmlAttributes={{lang: 'en'}}
         meta={[{name: 'description', content: siteDescription}]}
         title={siteTitle}
       />
       <LandingHeader />
+      <Podcast />
       {/*
       {posts.map(({node}) => {
         const title = get(node, 'frontmatter.title') || node.fields.slug;

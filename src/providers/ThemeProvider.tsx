@@ -5,11 +5,9 @@ import {default as themes, getThemeSizes} from '../config/themes';
 
 const EmotionProvider = ({children}) => {
   const [themeSizes, setThemeSizes] = useState(getThemeSizes());
-  console.log('themeSizes', themeSizes);
 
   useEffect(() => {
     const resizeHandler = () => {
-      console.log('getThemeSizes()', getThemeSizes());
       setThemeSizes(getThemeSizes());
     };
 

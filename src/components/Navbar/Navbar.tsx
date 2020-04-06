@@ -28,7 +28,7 @@ const Navbar: React.FC = () => {
             <NavLink to="/support">Support</NavLink>
           </NavContainer>
         )}
-        {!theme.smallDevice && <Button text="Get the App" />}
+        {!theme.smallDevice && <Button>Get the App</Button>}
       </FlexContainer>
     </SliceContainer>
   );

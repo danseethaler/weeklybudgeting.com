@@ -56,6 +56,8 @@ const lightThemeColors = {
   body: '#777777',
   starYellow: '#FFC800',
 
+  success100: '#F4FFFA',
+
   blue100: '#F2F8FC',
   blue200: '#BDD4E5',
   blue300: '#7AA0BD',
@@ -115,6 +117,8 @@ const darkThemeColors: ColorTheme = {
   subheader: '#5C5C5C',
   body: '#777777',
   starYellow: '#FFC800',
+
+  success100: '#F4FFFA',
 
   blue100: '#18374E',
   blue200: '#2C516D',

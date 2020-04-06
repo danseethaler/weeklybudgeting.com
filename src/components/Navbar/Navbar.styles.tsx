@@ -38,7 +38,7 @@ const MobileNavButtonContainer = styled.button<{open: boolean}>(
     top: theme.baseUnit * 2,
     right: theme.baseUnit * 2,
     borderRadius: theme.baseUnit / 2,
-    backgroundColor: open ? theme.colors.white : '#F0FFFA',
+    backgroundColor: open ? theme.colors.white : theme.colors.success100,
     transition: theme.transition,
     border: 'none',
     padding: 0,
