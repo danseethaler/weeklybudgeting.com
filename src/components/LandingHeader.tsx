@@ -34,7 +34,7 @@ const LandingHeader: React.FC = () => {
               href="https://apps.apple.com/us/app/weekly-budgeting-redefined/id1460038809"
               // onClick="return trackAppStoreClick();"
             >
-              <img src={appStore} />
+              <img style={{transform: 'scale(1.5)'}} src={appStore} />
             </a>
           )}
         </FlexContainer>
